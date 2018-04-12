@@ -40,7 +40,7 @@ namespace Hotfix
                 G2R_GetLoginKey_Ack getLoginKey_Ack = await gateSession.Call(new R2G_GetLoginKey_Req() { UserID = account.Id }) as G2R_GetLoginKey_Ack;
 
                 response.Key = getLoginKey_Ack.Key;
-                response.Address = gateConfig.GetComponent<OuterConfig>().IPEndPoint.ToString();
+                response.Address = gateConfig.GetComponent<OuterConfig>().IPEndPoint2.ToString();
                 reply(response);
             }
             catch (Exception e)

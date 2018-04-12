@@ -1,1 +1,1 @@
-{ "_t" : "GlobalProto", "AssetBundleServerUrl" : "http://47.100.172.47:8080/", "Address" : "127.0.0.1:10002" }
+{ "_t" : "GlobalProto", "AssetBundleServerUrl" : "http://47.100.172.47:8080/", "Address" : "47.100.172.47:10002" }
