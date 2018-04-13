@@ -1,0 +1,1 @@
+Start /D "..\FileServer" FileServer.exe
