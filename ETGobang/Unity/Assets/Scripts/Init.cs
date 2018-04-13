@@ -4,72 +4,68 @@ using UnityEngine;
 
 namespace ETModel
 {
-	public class Init : MonoBehaviour
-	{
-		private readonly OneThreadSynchronizationContext contex = new OneThreadSynchronizationContext();
+    public class Init : MonoBehaviour
+    {
+        private readonly OneThreadSynchronizationContext contex = new OneThreadSynchronizationContext();
 
-		private async void Start()
-		{
-			try
-			{
-				if (Application.unityVersion != "2017.1.0p5")
-				{
-					Log.Warning($"当前版本:{Application.unityVersion}, 最好使用运行指南推荐版本!");
-				}
+        private async void Start()
+        {
+            try
+            {
+                Log.Warning($"当前版本:{Application.unityVersion}");
 
-				SynchronizationContext.SetSynchronizationContext(this.contex);
+                SynchronizationContext.SetSynchronizationContext(this.contex);
 
-				DontDestroyOnLoad(gameObject);
-				Game.EventSystem.Add(DLLType.Model, typeof(Init).Assembly);
+                DontDestroyOnLoad(gameObject);
 
-				Game.Scene.AddComponent<GlobalConfigComponent>();
-				Game.Scene.AddComponent<NetOuterComponent>();
-				Game.Scene.AddComponent<ResourcesComponent>();
-				Game.Scene.AddComponent<BehaviorTreeComponent>();
-				Game.Scene.AddComponent<PlayerComponent>();
-				Game.Scene.AddComponent<UnitComponent>();
-				Game.Scene.AddComponent<ClientFrameComponent>();
-				Game.Scene.AddComponent<UIComponent>();
+                Game.EventSystem.Add(DLLType.Model, typeof(Init).Assembly);
 
-				// 下载ab包
-				await BundleHelper.DownloadBundle();
+                Game.Scene.AddComponent<GlobalConfigComponent>();
+                Game.Scene.AddComponent<NetOuterComponent>();
+                Game.Scene.AddComponent<ResourcesComponent>();
+                Game.Scene.AddComponent<BehaviorTreeComponent>();
+                Game.Scene.AddComponent<PlayerComponent>();
+                Game.Scene.AddComponent<UnitComponent>();
+                Game.Scene.AddComponent<ClientFrameComponent>();
+                Game.Scene.AddComponent<UIComponent>();
 
-				Game.Hotfix.LoadHotfixAssembly();
+                await BundleHelper.DownloadBundle();
 
-				// 加载配置
-				Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("config.unity3d");
-				Game.Scene.AddComponent<ConfigComponent>();
-				Game.Scene.GetComponent<ResourcesComponent>().UnloadBundle("config.unity3d");
-				Game.Scene.AddComponent<OpcodeTypeComponent>();
-				Game.Scene.AddComponent<MessageDispatherComponent>();
+                Game.Hotfix.LoadHotfixAssembly();
 
-				Game.Hotfix.GotoHotfix();
+                Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("config.unity3d");
+                Game.Scene.AddComponent<ConfigComponent>();
+                Game.Scene.GetComponent<ResourcesComponent>().UnloadBundle("config.unity3d");
+                Game.Scene.AddComponent<OpcodeTypeComponent>();
+                Game.Scene.AddComponent<MessageDispatherComponent>();
 
-				Game.EventSystem.Run(EventIdType.TestHotfixSubscribMonoEvent, "TestHotfixSubscribMonoEvent");
-			}
-			catch (Exception e)
-			{
-				Log.Error(e);
-			}
-		}
+                Game.Hotfix.GotoHotfix();
 
-		private void Update()
-		{
-			this.contex.Update();
-			Game.Hotfix.Update?.Invoke();
-			Game.EventSystem.Update();
-		}
+                Game.EventSystem.Run(EventIdType.TestHotfixSubscribMonoEvent, "TestHotfixSubscribMonoEvent");
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
+        }
 
-		private void LateUpdate()
-		{
-			Game.Hotfix.LateUpdate?.Invoke();
-			Game.EventSystem.LateUpdate();
-		}
+        private void Update()
+        {
+            this.contex.Update();
+            Game.Hotfix.Update?.Invoke();
+            Game.EventSystem.Update();
+        }
 
-		private void OnApplicationQuit()
-		{
-			Game.Hotfix.OnApplicationQuit?.Invoke();
-			Game.Close();
-		}
-	}
+        private void LateUpdate()
+        {
+            Game.Hotfix.LateUpdate?.Invoke();
+            Game.EventSystem.LateUpdate();
+        }
+
+        private void OnApplicationQuit()
+        {
+            Game.Hotfix.OnApplicationQuit?.Invoke();
+            Game.Close();
+        }
+    }
 }
