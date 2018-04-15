@@ -38,7 +38,7 @@ namespace ETModel
 			this.allConfig.Clear();
 			Type[] types = DllHelper.GetMonoTypes();
 
-			foreach (Type type in types)
+            foreach (Type type in types)
 			{
 				object[] attrs = type.GetCustomAttributes(typeof (ConfigAttribute), false);
 				if (attrs.Length == 0)

@@ -145,4 +145,22 @@ namespace ETHotfix
 
 	}
 
+	[Message(HotfixOpcode.G2C_UserInfo)]
+	[ProtoContract]
+	public partial class G2C_UserInfo: IResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+		[ProtoMember(1, TypeName = "ETHotfix.PlayerInfo")]
+		public List<PlayerInfo> PlayerInfos = new List<PlayerInfo>();
+
+	}
+
 }
