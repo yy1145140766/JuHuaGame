@@ -1,11 +1,12 @@
 ﻿namespace ETModel
 {
     [Event(EventIdType.LoadingBegin)]
-    public class LoadingBeginEvent_CreateLoadingUI : AEvent
+    public class LoadingBeginEvent_CreateLoadingUI: AEvent
     {
         public override void Run()
         {
-			Game.Scene.GetComponent<UIComponent>().Create(UIType.UILoading);
+            //Game.Scene.GetComponent<UIComponent>().Create(UIType.UILoading);
+            //UIManager.Instance.PushStack<UILoadingComponent>(UIComponentType.UILoading,null);
         }
     }
 }

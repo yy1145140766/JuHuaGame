@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-  - key: UILoading
-    gameObject: {fileID: 1386170326414932, guid: 0deea0b3b021a714d8c54816d4ee5fbe,
-      type: 2}
   - key: GlobalProto
     gameObject: {fileID: 4900000, guid: 78f3a209a7b81ec46a196b52eea7e541, type: 3}
+  - key: UILoading
+    gameObject: {fileID: 1386170326414932, guid: 5b32773558095694ab629e29ceffe3f2,
+      type: 2}

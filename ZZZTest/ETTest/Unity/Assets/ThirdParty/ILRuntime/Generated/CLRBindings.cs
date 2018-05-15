@@ -112,6 +112,9 @@ namespace ILRuntime.Runtime.Generated
             UnityEngine_UI_InputField_Binding.Register(app);
             ETModel_NetworkComponent_Binding.Register(app);
             ETModel_ComponentFactory_Binding.Register(app);
+            System_Collections_Generic_Stack_1_ILTypeInstance_Binding.Register(app);
+            System_Collections_Generic_Dictionary_2_UICanvasType_Transform_Binding.Register(app);
+            ETModel_UICanvasConfig_Binding.Register(app);
         }
     }
 }
