@@ -1,0 +1,6 @@
+G:\JuHuaGame\JuHuaGame\JGameFramework\Assets\GameMain\HoxfitDLL\Hoxfit.dll
+G:\JuHuaGame\JuHuaGame\JGameFramework\Assets\GameMain\HoxfitDLL\Hoxfit.pdb
+G:\JuHuaGame\JuHuaGame\Hoxfit\obj\Debug\Hoxfit.csproj.CoreCompileInputs.cache
+G:\JuHuaGame\JuHuaGame\Hoxfit\obj\Debug\Hoxfit.dll
+G:\JuHuaGame\JuHuaGame\Hoxfit\obj\Debug\Hoxfit.pdb
+G:\JuHuaGame\JuHuaGame\Hoxfit\obj\Debug\Hoxfit.csprojResolveAssemblyReference.cache
