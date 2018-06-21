@@ -1,0 +1,6 @@
+G:\JuHuaGame\JuHuaGame\GameFramework\GameFramework\GameFramework\GameFramework\bin\Debug\GameFramework.dll
+G:\JuHuaGame\JuHuaGame\GameFramework\GameFramework\GameFramework\GameFramework\bin\Debug\GameFramework.pdb
+G:\JuHuaGame\JuHuaGame\GameFramework\GameFramework\GameFramework\GameFramework\obj\Debug\GameFramework.csprojResolveAssemblyReference.cache
+G:\JuHuaGame\JuHuaGame\GameFramework\GameFramework\GameFramework\GameFramework\obj\Debug\GameFramework.csproj.CoreCompileInputs.cache
+G:\JuHuaGame\JuHuaGame\GameFramework\GameFramework\GameFramework\GameFramework\obj\Debug\GameFramework.dll
+G:\JuHuaGame\JuHuaGame\GameFramework\GameFramework\GameFramework\GameFramework\obj\Debug\GameFramework.pdb
